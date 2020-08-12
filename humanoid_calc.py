@@ -17,8 +17,41 @@ def humanoid_calculator(text):
             return "\nOops..! No operations found.. Try again.."
     except:
         return "\nOops..! No operands found.. Try again.."
+    
+    if operands and operations:
+    
+        if operations[0]=='Addition':
+            if len(operands)<2:
+                return "\nOops..! Missing operands.. Try Again.."
+            else:
+                result = operands[0]+operands[1]
+                return f"\nResult is {result}"
+
+        if operations[0]=='Substraction':
+            if len(operands)<2:
+                return "\nOops..! Missing operands.. Try Again.."
+            else:
+                result = operands[0]-operands[1]
+                return f"\nResult is {result}"
+    
+        if operations[0]=='Multiplication':
+            if len(operands)<2:
+                return "\nOops..! Missing operands.. Try Again.."
+            else:
+                result = operands[0]*operands[1]
+                return f"\nResult is {result}"
+
+        if operations[0]=='Division':
+            if len(operands)<2:
+                return "\nOops..! Missing operands.. Try Again.."
+            else:
+                result = operands[0]/operands[1]
+                return f"\nResult is {result}"
+
+    else:
+        return "\nOops..! You have missed operands or operation.. Try Again.."
 
 
-text = "I want to multiply  with"
+text = "I want to multiply 4 with 6"
 output = humanoid_calculator(text)
 print(output)
